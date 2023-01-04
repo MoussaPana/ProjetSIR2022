@@ -6,17 +6,17 @@ pipeline{
     stages{
         stage('Source') {
             steps{
-                git branch: 'main', url: 'https://github.com/bayeserigneseck40/ProjetSIR2022.git'
+                git branch: 'main', url: 'https://github.com/MoussaPana/ProjetSIR2022.git'
             }
         }
         stage ('Build') {
             steps{
-                bat 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install'
+                sh 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install'
             }
         }
         stage ('SonarQube Analysis') {
             steps{
-                bat 'mvn sonar:sonar'
+                sh 'mvn sonar:sonar'
             }
         }
 
