@@ -2,18 +2,18 @@ version: '3.1'
 
 services:
   app:
-    container_name: projet-sir-2022
-    image: projet-sir-2022
+    container_name: projet-sir-22
+    image: projet-sir-22
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-        - "8080:8080"
+        - "8084:8084"
     depends_on:
       - dbmysql
 
   dbmysql:
-    container_name: projet-sir-2022-db
+    container_name: projet-sir-22-db
     image: mysql
     ports:
       - "3306:3306"
